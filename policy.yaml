@@ -1,0 +1,12 @@
+on_http_request:
+  # Require Google login before the site loads
+  - actions:
+      - type: oauth
+        config:
+          provider: google
+
+  # Optional: lock to one email domain (uncomment & edit to enable)
+  # - expressions:
+  #     - "!actions.ngrok.oauth.identity.email.endsWith('@gmail.com')"
+  #   actions:
+  #     - type: deny

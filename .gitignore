@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Next.js / build
+**/.next/
+**/out/
+**/dist/
+**/build/
+**/.vercel/
+**/.sanity/
+*.tsbuildinfo
+
+# Logs & OS
+*.log
+.DS_Store
+*.pem
+
+# ngrok local policy secrets if any
+# (policy.yaml is fine to commit)
+
+# IDE
+.idea/
+.vscode/
+*.swp
