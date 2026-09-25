@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { PageHero, Reveal } from "@/components/shared/PageHero";
 import { getSiteSettings } from "@/lib/sanity/fetch";
@@ -47,6 +48,7 @@ export default async function ContactPage() {
           </Reveal>
         </div>
       </section>
+      <WhatsAppButton />
     </main>
   );
 }

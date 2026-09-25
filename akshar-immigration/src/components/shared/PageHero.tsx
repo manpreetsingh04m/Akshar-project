@@ -96,7 +96,7 @@ export function SlideLink({
     <Link
       href={href}
       className={cn(
-        "group inline-flex items-center gap-2 overflow-hidden rounded-full px-6 py-3 text-sm font-semibold transition",
+        "group inline-flex w-full items-center overflow-hidden rounded-full py-2 pl-6 pr-2 text-sm font-semibold transition sm:w-auto",
         variant === "gold" &&
           "bg-gold text-ink shadow-[0_14px_40px_-16px_rgba(196,163,90,0.85)] hover:bg-gold-hot",
         variant === "ink" && "bg-ink text-parchment hover:bg-ink-soft",
@@ -106,9 +106,10 @@ export function SlideLink({
       )}
     >
       <span>{children}</span>
+      <span className="arrow-track" aria-hidden />
       <span
         className={cn(
-          "flex size-7 items-center justify-center rounded-full transition group-hover:translate-x-1",
+          "flex size-8 shrink-0 items-center justify-center rounded-full",
           variant === "ghost" ? "bg-white/10" : "bg-black/10",
         )}
       >

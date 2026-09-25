@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Source_Sans_3, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { ChatWidget } from "@/components/shared/ChatWidget";
 import { GoogleAnalytics } from "@/components/shared/GoogleAnalytics";
 import { getSiteSettings } from "@/lib/sanity/fetch";
@@ -74,7 +73,6 @@ export default async function RootLayout({
         <div className="flex-1 pt-0">{children}</div>
         <Footer />
         <ChatWidget />
-        <WhatsAppButton />
       </body>
     </html>
   );

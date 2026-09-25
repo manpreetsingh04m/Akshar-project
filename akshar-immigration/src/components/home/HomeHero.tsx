@@ -109,7 +109,7 @@ export function HomeHero() {
           className="mt-8 hidden items-center gap-2 text-xs uppercase tracking-[0.2em] text-parchment/50 transition hover:text-gold md:inline-flex"
         >
           Scroll
-          <ArrowDown className="size-3.5 animate-bounce" />
+          <ArrowDown className="size-3.5 animate-bounce [animation-duration:2.4s]" />
         </motion.a>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { MessageCircle, Send, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type ChatMessage = {
@@ -11,6 +12,8 @@ type ChatMessage = {
 };
 
 export function ChatWidget() {
+  const pathname = usePathname();
+  const raised = pathname === "/contact";
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -70,7 +73,7 @@ export function ChatWidget() {
     <>
       {open && (
         <div
-          className="fixed bottom-40 right-6 z-50 flex h-[min(420px,70vh)] w-[min(360px,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-[#EBE4D6] bg-white shadow-xl"
+          className={`fixed right-6 z-50 flex h-[min(420px,70vh)] w-[min(360px,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-[#EBE4D6] bg-white shadow-xl transition-[bottom] duration-1000 ease-in-out ${raised ? "bottom-40" : "bottom-24"}`}
           role="dialog"
           aria-label="Akshar AI chat"
         >
@@ -144,7 +147,7 @@ export function ChatWidget() {
         type="button"
         size="icon-lg"
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-24 right-6 z-50 size-14 rounded-full bg-[#0B1F3A] text-[#F7F3EB] shadow-lg hover:bg-[#1A3358]"
+        className={`fixed right-6 z-50 size-14 rounded-full bg-[#0B1F3A] text-[#F7F3EB] shadow-lg transition-[bottom] duration-1000 ease-in-out hover:bg-[#1A3358] ${raised ? "bottom-24" : "bottom-6"}`}
         aria-expanded={open}
         aria-label={open ? "Close Akshar AI chat" : "Open Akshar AI chat"}
       >
